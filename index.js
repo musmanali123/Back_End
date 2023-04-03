@@ -1,3 +1,31 @@
-import { location,name ,myage} from "./module practice/index_modue.js";
+import express from "express";
+import path from "path";
 
-console.log('Check LOGS -->',location,name,myage());
+const app = express();
+
+// Setting UP Engine
+app.set("view engine","ejs")
+app.use(express.static(path.join(path.resolve(),"public")))
+
+// USING Middle_ware
+app.use(express.urlencoded({extended:true}))
+
+app.get('/',(req,res)=>{
+    res.render("index",{name:'Test_User'})
+})
+// REDIRECT _API
+app.get('/success',(req,res)=>{
+    res.render("success")
+})
+
+// POST
+app.post("/contact", (req,res)=>{
+console.log("POST_CHANGES =>",req.body);
+// res.render('success')
+//BY URL_ REDIRECTION
+res.redirect('/success')
+})
+
+app.listen(5000,()=>{
+    console.log("SERVER IS WORKING")
+})
