@@ -1,7 +1,7 @@
 //import express from "express";
 //import path from "path";
 
-const app = express();
+//const app = express();
 
 // Setting UP Engine
 app.set("view engine","ejs")
