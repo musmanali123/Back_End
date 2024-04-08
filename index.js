@@ -4,7 +4,7 @@
 //const app = express();
 
 // Setting UP Engine
-app.set("view engine","ejs")
+//app.set("view engine","ejs")
 app.use(express.static(path.join(path.resolve(),"public")))
 
 // USING Middle_ware
@@ -26,6 +26,6 @@ console.log("POST_CHANGES =>",req.body);
 res.redirect('/success')
 })
 
-app.listen(5000,()=>{
+app.listen(3000,()=>{
     console.log("SERVER IS WORKING")
 })
