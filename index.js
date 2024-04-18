@@ -6,7 +6,7 @@
 // Setting UP Engine
 //app.set("view engine","ejs")
 app.use(express.static(path.join(path.resolve(),"public")))
-
+//@pp.use(0). statically
 // USING Middle_ware
 app.use(express.urlencoded({extended:true}))
 
